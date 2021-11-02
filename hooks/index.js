@@ -1,4 +1,4 @@
-// export default (nuxtConfig) => {
+// export default (config) => {
 //   return {
 //     listen(server, { host, port }) {
 //       // console.log('!This is the server: ' + JSON.stringify(server))
@@ -32,7 +32,6 @@ import render from './render'
 export default (nuxtConfig) => {
   return {
     listen,
-    // listen: listen(nuxtConfig),
     render: render(nuxtConfig),
   }
 }

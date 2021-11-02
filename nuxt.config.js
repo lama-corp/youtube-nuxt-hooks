@@ -1,4 +1,6 @@
-// import hooks from './hooks'
+import hooks from './hooks'
+
+// const conf = {}
 
 export default {
   target: 'static',
@@ -44,28 +46,41 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-  // hooks: {
-  //   listen(server, { host, port }) {
-  //     // console.log('!This is the server: ' + JSON.stringify(server))
-  //     console.log('!This is the host: ' + host)
-  //     console.log('!This is the port: ' + port)
-  //   },
-  //   render: {
-  //     before() {
-  //       console.log('!render:before')
-  //     },
-  //   },
-  //   build: {
-  //     before() {
-  //       console.log('!build:before')
-  //     },
-  //     done() {
-  //       console.log('!build:done')
-  //     },
-  //   },
-  // },
+
+  hooks: {
+    listen(server, { host, port }) {
+      console.log('!listen')
+      // console.log('!This is the server: ' + JSON.stringify(server))
+      console.log('!This is the host: ' + host)
+      console.log('!This is the port: ' + port)
+    },
+    render: {
+      before() {
+        console.log('!render:before')
+      },
+    },
+    build: {
+      before() {
+        console.log('!build:before')
+      },
+      done() {
+        console.log('!build:done')
+      },
+      // extendRoutes(routes, resolve) {
+      //   console.log('!build:extendRoutes')
+      //   console.log(routes)
+      //   routes[0].path = '/fr/'
+      //   routes[0].name = 'index_fr'
+      //   routes.push(Object.assign({}, routes[0]))
+      //   routes[1].path = '/en/'
+      //   routes[1].name = 'index_en'
+      // },
+    },
+  },
 
   // hooks: hooks(this),
+  // hooks,
+  // hooks: hooks(conf),
 
   // hooks: {
   //   components: {
@@ -76,7 +91,6 @@ export default {
   //   generate: {
   //     before(generator, generateOptions) {
   //       console.log('!generate:before')
-  //       console.log(generator, generateOptions)
   //     },
   //   },
   // },
