@@ -18,8 +18,11 @@
     "lint": "yarn lint:js && yarn lint:style"
   },
   "dependencies": {
+    "axios": "^0.24.0",
+    "consola": "^2.15.3",
     "core-js": "^3.15.1",
-    "nuxt": "^2.15.8"
+    "nuxt": "^2.15.8",
+    "ohmyfetch": "^0.4.2"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",

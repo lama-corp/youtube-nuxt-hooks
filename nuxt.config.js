@@ -1,4 +1,4 @@
-// import hooks from './hooks'
+import hooks from './hooks'
 
 export default {
   target: 'static',
@@ -44,40 +44,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-  // hooks: {
-  //   listen(server, { host, port }) {
-  //     // console.log('!This is the server: ' + JSON.stringify(server))
-  //     console.log('!This is the host: ' + host)
-  //     console.log('!This is the port: ' + port)
-  //   },
-  //   render: {
-  //     before() {
-  //       console.log('!render:before')
-  //     },
-  //   },
-  //   build: {
-  //     before() {
-  //       console.log('!build:before')
-  //     },
-  //     done() {
-  //       console.log('!build:done')
-  //     },
-  //   },
-  // },
 
-  // hooks: hooks(this),
-
-  // hooks: {
-  //   components: {
-  //     dirs(dirs) {
-  //       dirs[0] = '~/component'
-  //     },
-  //   },
-  //   generate: {
-  //     before(generator, generateOptions) {
-  //       console.log('!generate:before')
-  //       console.log(generator, generateOptions)
-  //     },
-  //   },
-  // },
+  hooks,
 }

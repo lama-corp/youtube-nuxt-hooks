@@ -1,5 +1,35 @@
 # create-lama-codeur-nuxt
 
+## NuxtJS hooks example
+
+Cas pratique d'utilisation des hooks NuxtJS !
+
+Énoncé : vous êtes dans une position de freelance. Un de vos clients a des problèmes de
+performances quant à la génération de son site statique.
+Il vous contacte afin de réduire au maximum le temps d'exécution de sa CI.
+
+Les caractéristiques du site sont les suivantes :
+- Le site est entièrement statique.
+- Le site dispose de 20 pages.
+- Chacune de ces pages met 0.5 seconde à se générer et fait de 1 à 3 appels à l'API.
+- Pour des raisons de SEO, le site est régénéré pour chacune des 1000 plus grandes villes 
+de la zone France, Suisse et Belgique. Cette régénération permet de variabiliser les URL et le
+contenu des pages (seul le nom de la ville et celui de la région géographique sont utilisés ;
+seul 1 à 3 occurrences par page diffèrent).
+- Le module communautaire @nuxtjs/sitemap est utilisé.
+
+Fonctionnement actuel de la régénération : le site internet est placé dans un répertoire _city.
+L'application dispose d'une page d'accueil "index.vue" récupérant la liste des 1000 villes et
+les affiche sous forme de liens vers le site internet. Ex : /paris/ ; /bruxelles/ ; ...
+Le crawler NuxtJS est utilisé pour faire la génération des pages → il commence par la page 
+d'accueil, puis parcourt les 1000 points d'entrées 1 par 1.
+→ Le crawler parcourt 1000 * 20 pages = 20 000 pages.
+→ Sachant que la génération d'une page met 0.5 seconde, le temps total est d'environ 2h45.
+
+Votre client vous demande de réaliser un POC.
+Vous n'avez le droit qu'aux hooks NuxtJS pour résoudre ce problème.
+Vous avez 4 heures :D
+
 ## Build Setup
 
 ```bash
